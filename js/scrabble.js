@@ -166,9 +166,10 @@ function initListenner() {
           return;
         }
         if (/[A-Z]/g.test(letter.toUpperCase())) {
-          GAME_INFO.letters[pos].image = SCRABBLE_TILES[letter.toUpperCase()].image;
           GAME_INFO.letters[pos].value = SCRABBLE_TILES[letter.toUpperCase()].value;
           GAME_INFO.letters.splice(pos, 1);
+          GAME_INFO.letters[pos] = SCRABBLE_TILES[letter.toUpperCase()];
+          GAME_INFO.letters[pos].image = SCRABBLE_TILES[letter.toUpperCase()].image;
         } else {
           GAME_INFO.state = ''
           return;
